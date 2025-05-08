@@ -1,0 +1,5 @@
+{
+    "SpeechTextMatching_LibriSpeech-TestClean": {
+        "llm_classification_score": 0.835
+    }
+}

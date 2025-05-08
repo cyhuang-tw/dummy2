@@ -67,7 +67,7 @@ def create_regression_prompt(instruction, label, sllm_response):
 
 def create_classification_prompt(instruction, label, sllm_response):
     INSTRUCTION_REFINE_COT_SINGLE_AND_MULTI_CHOICE = """
-You will be given a question, a corresponding correct answer(s), and a response from a model.
+    You will be given a question, a corresponding correct answer(s), and a response from a model.
 The model's response is a reply to the question. Your task is to judge if the "Model's Response" aligns with the "Ground Truth Answer" based on the "Question."
 Please strictly follow the guidelines below:
 - Briefly explain the reasons for your judgment.
@@ -83,8 +83,10 @@ Input Format:
 Question: {instruction}
 Ground Truth Answer: {label}
 Model's Response: {sllm_response}
-""".strip()
+    """.strip()
 
+    import ipdb
+    ipdb.set_trace()
 
     text = INSTRUCTION_REFINE_COT_SINGLE_AND_MULTI_CHOICE.format(
         instruction=instruction, label=label, sllm_response=sllm_response
@@ -96,3 +98,4 @@ Model's Response: {sllm_response}
         {"role": "user", "content": text},
     ]
     return messages
+create_classification_prompt(1, 1, 1)

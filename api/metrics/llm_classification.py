@@ -39,6 +39,7 @@ def get_score(task_name, raw_data, cache_dir, generate_response):
 
         # Record
         eval_data[pwav] = raw_data[pwav]
+        eval_data[pwav]["messages"] = messages
         eval_data[pwav]["evaluation_response"] = outputs
 
     # Save evaluation results to cache_dir
